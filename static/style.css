@@ -14,6 +14,10 @@ blockquote:before, blockquote:after, q:before, q:after { content: ''; content: n
 
 table { border-collapse: collapse; border-spacing: 0; }
 
+span.highlight {
+    background-color: yellow;
+}
+
 .hll { background-color: #ffffcc; }
 
 .c { color: #408080; font-style: italic; }
@@ -231,7 +235,9 @@ strong { font-weight: 400; }
 
 em { font-style: italic; }
 
-code { font-family: Inconsolata, monospace; background: rgba(0, 135, 247, 0.04); padding: 0.2em 0.4em; }
+/*code { font-family: Inconsolata, monospace; background: rgba(0, 135, 247, 0.04); padding: 0.2em 0.4em; }*/
+
+code { font-family: Inconsolata, monospace; background: yellow; padding: 0.2em 0.4em; }
 
 .highlight code, td:first-child code { background: none; padding: 0; }
 

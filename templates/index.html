@@ -8,7 +8,7 @@
 <!-- tiptheweb.org -->
 <meta name="ttw" content="dt7xvsr">
 
-<title>Dropzone.js</title>
+<title>dCoder</title>
 
 <meta name="description" value="DropzoneJS is an open source library that provides beautiful and easy to use drag&#39;n&#39;drop file uploads with image previews.">
 <meta name="keywords" value="javascript dragndrop drag and drop drag&#39;n&#39;drop file upload image preview coffeescript">
@@ -145,23 +145,25 @@
     <nav class="">
       <a class="logo" href="http://www.dropzonejs.com/#"><img src="static/new-logo-icon.svg" alt="Logo"></a>
 
-    <div class="level-0"><a href="http://www.dropzonejs.com/#installation" class="">Installation</a><div class="sub-sections" style="height: 0px;"><div class="level-1"><a href="http://www.dropzonejs.com/#with-component" class="">With component</a></div><div class="level-1"><a href="http://www.dropzonejs.com/#with-requirejs" class="">With RequireJS</a></div></div></div><div class="level-0"><a href="http://www.dropzonejs.com/#usage" class="">Usage</a><div class="sub-sections" style="height: 0px;"><div class="level-1"><a href="http://www.dropzonejs.com/#create-dropzones-programmatically" class="">Create dropzones programmatically</a></div><div class="level-1"><a href="http://www.dropzonejs.com/#server-side-implementation" class="">Server side implementation</a></div></div></div><div class="level-0"><a href="http://www.dropzonejs.com/#configuration" class="">Configuration</a><div class="sub-sections" style="height: 0px;"><div class="level-1"><a href="http://www.dropzonejs.com/#configuration-options" class="">Configuration options</a></div><div class="level-1"><a href="http://www.dropzonejs.com/#enqueuing-file-uploads" class="">Enqueuing file uploads</a></div><div class="level-1"><a href="http://www.dropzonejs.com/#layout" class="">Layout</a></div><div class="level-1"><a href="http://www.dropzonejs.com/#dropzone-methods" class="">Dropzone methods</a></div></div></div><div class="level-0"><a href="http://www.dropzonejs.com/#events" class="">Events</a><div class="sub-sections" style="height: 0px;"><div class="level-1"><a href="http://www.dropzonejs.com/#event-list" class="">Event List</a></div><div class="level-1"><a href="http://www.dropzonejs.com/#theming" class="">Theming</a></div></div></div><div class="level-0"><a href="http://www.dropzonejs.com/#tips" class="">Tips</a></div><div class="level-0"><a href="http://www.dropzonejs.com/#compatibility" class="">Compatibility</a><div class="sub-sections" style="height: 0px;"><div class="level-1"><a href="http://www.dropzonejs.com/#browser-support">Browser Support</a></div><div class="level-1"><a href="http://www.dropzonejs.com/#version-40" class="">Version 4.0</a></div><div class="level-1"><a href="http://www.dropzonejs.com/#version-30" class="">Version 3.0</a></div><div class="level-1"><a href="http://www.dropzonejs.com/#version-20" class="">Version 2.0</a></div></div></div><div class="level-0"><a href="http://www.dropzonejs.com/#donate" class="">Donate</a></div></nav>
+    <div class="level-0"><a href="#" class="">Installation</a><div class="sub-sections" style="height: 0px;"><div class="level-1"><a href="#" class="">With component</a></div><div class="level-1"><a href="#" class="">With RequireJS</a></div></div></div><div class="level-0"><a href="#usage" class="">Usage</a><div class="sub-sections" style="height: 0px;"><div class="level-1"><a href="http://www.dropzonejs.com/#create-dropzones-programmatically" class="">Create dropzones programmatically</a></div><div class="level-1"><a href="http://www.dropzonejs.com/#server-side-implementation" class="">Server side implementation</a></div></div></div><div class="level-0"><a href="#configuration" class="">NDA</a><div class="sub-sections" style="height: 0px;"><div class="level-1"><a href="#configuration-options" class="">Configuration options</a></div><div class="level-1"><a href="#enqueuing-file-uploads" class="">Enqueuing file uploads</a></div><div class="level-1"><a href="#layout" class="">Layout</a></div><div class="level-1"><a href="#dropzone-methods" class="">Dropzone methods</a></div></div></div><div class="level-0"><a href="#events" class="">Events</a><div class="sub-sections" style="height: 0px;"><div class="level-1"><a href="#event-list" class="">Event List</a></div><div class="level-1"><a href="#theming" class="">Theming</a></div></div></div><div class="level-0"><a href="#tips" class="">Tips</a></div><div class="level-0"><a href="#compatibility" class="">Compatibility</a><div class="sub-sections" style="height: 0px;"><div class="level-1"><a href="#browser-support">Browser Support</a></div><div class="level-1"><a href="#version-40" class="">Version 4.0</a></div><div class="level-1"><a href="#version-30" class="">Version 3.0</a></div><div class="level-1"><a href="#version-20" class="">Version 2.0</a></div></div></div><div class="level-0"><a href="#donate" class="">Donate</a></div></nav>
+    
 
     <section>
 
-  <h1 id="try-it-out">Try it out!</h1>
+  <h1 id="try-it-out">Upload Document</h1>
 
   <div id="dropzone"><form action="http://www.dropzonejs.com/upload" class="dropzone needsclick dz-clickable" id="demo-upload">
 
   <div class="dz-message needsclick">
     Drop files here or click to upload.<br>
-    <span class="note needsclick">(This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)</span>
+    <span class="note needsclick">(Select a <strong>pdf</strong>, <strong>txt</strong>, or <strong>doc</strong>)</span>
   </div>
 
 </form></div>
 
 </section>
 
+<!--
 <section class="news">
 
   <h1 id="news">News</h1>
@@ -193,10 +195,6 @@ or stream it on <a href="https://open.spotify.com/album/14y7LCmuPCBAZqrvc6uqkd">
     <iframe style="display: block; width: 300px; margin: 0 auto;" src="static/saved_resource.html" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
 </div>
 
-  <!--Dropzone **v4.0.0** is released! It has been completely redesigned, and
-the website has been updated. Big thanks to [1910](http://www.weare1910.com)
-for designing the new logo and website. It looks fantastic. Check out their
-work!-->
 
 </section>
 
@@ -346,75 +344,48 @@ please contact me.</p>
 you need more information.</p>
 
 </section>
+-->
+
 
 <section>
 
-  <h1 id="configuration">Configuration</h1>
+  <h1 id="configuration">Basic Nondisclosure Agreement</h1>
 
-  <p>There are two ways to configure dropzones.</p>
-
-  <p>The obvious way is to pass an options object when instantiating a dropzone
-programmatically like in the previous <a href="http://www.dropzonejs.com/#create-dropzones-programmatically">create dropzones programmatically</a>
-section.</p>
-
-  <p>But if you just have HTML elements with the <code class="highlighter-rouge">dropzone</code> class, then you don’t
-programmatically instantiate the objects, so you have to store the configuration
-somewhere so Dropzone knows how to configure the dropzones when instantiating
-them.</p>
+  <p>This Nondisclosure Agreement (the "Agreement") is entered into by and between UC Berkeley with its principal offices at Berkeley, California ("Disclosing Party") and John Doe, located at San Diego, California ("Receiving Party") for the purpose of preventing the unauthorized disclosure of Confidential Information as defined below. The parties agree to enter into a confidential relationship with respect to the disclosure of certain proprietary and confidential information ("Confidential Information").</p>
+<p>1. <strong>Definition of Confidential Information.</strong> For purposes of this Agreement, "Confidential Information" shall include all information or material that has or could have commercial value or other utility in the business in which Disclosing Party is engaged. If Confidential Information is in written form, the Disclosing Party shall label or stamp the materials with the word "Confidential" or some similar warning. If Confidential Information is transmitted orally, the Disclosing Party shall promptly provide a writing indicating that such oral communication constituted Confidential Information.</p>
+<p>2. <strong>Exclusions from Confidential Information.</strong> Receiving Party's obligations under this Agreement do not extend to information that is: (a) publicly known at the time of disclosure or subsequently becomes publicly known through no fault of the Receiving Party; (b) discovered or created by the Receiving Party before disclosure by Disclosing Party; (c) learned by the Receiving Party through legitimate means other than from the Disclosing Party or Disclosing Party's representatives; or (d) is disclosed by Receiving Party with Disclosing Party's prior written approval.</p>
+<p>3. <strong>Obligations of Receiving Party.</strong> Receiving Party shall hold and maintain the Confidential Information in strictest confidence for the sole and exclusive benefit of the Disclosing Party. Receiving Party shall carefully restrict access to Confidential Information to employees, contractors, and third parties as is reasonably required and shall require those persons to sign nondisclosure restrictions at least as protective as those in this Agreement. Receiving Party shall not, without prior written approval of Disclosing Party, use for Receiving Party's own benefit, publish, copy, or otherwise disclose to others, or permit the use by others for their benefit or to the detriment of Disclosing Party, any Confidential Information. Receiving Party shall return to Disclosing Party any and all records, notes, and other written, printed, or tangible materials in its possession pertaining to Confidential Information immediately if Disclosing Party requests it in writing.</p>
+<p>4. <strong>Time Periods.</strong> The nondisclosure provisions of this Agreement shall survive the termination of this Agreement and Receiving Party's duty to hold Confidential Information in confidence shall remain in effect until the Confidential Information no longer qualifies as a trade secret or until Disclosing Party sends Receiving Party written notice releasing Receiving Party from this Agreement, whichever occurs first.</p>
+<p>5. <strong>Relationships.</strong> Nothing contained in this Agreement shall be deemed to constitute either party a partner, joint venturer or employee of the other party for any purpose.</p>
+<p>6. <strong>Severability.</strong> If a court finds any provision of this Agreement invalid or unenforceable, the remainder of this Agreement shall be interpreted so as best to effect the intent of the parties.</p>
+<p>7. <strong>Integration.</strong> This Agreement expresses the complete understanding of the parties with respect to the subject matter and supersedes all prior proposals, agreements, representations, and understandings. This Agreement may not be amended except in a writing signed by both parties.</p>
+<p>8. <strong>Waiver.</strong> The failure to exercise any right provided in this Agreement shall not be a waiver of prior or subsequent rights.</p>
+<p>This Agreement and each party's obligations shall be binding on the representatives, assigns, and successors of such party. Each party has signed this Agreement through its authorized representative.</p>
 
   <p>This is done with the <code class="highlighter-rouge">Dropzone.options</code> object.</p>
 
-  <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// "myAwesomeDropzone" is the camelized version of the HTML element's ID</span>
-<span class="nx">Dropzone</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">myAwesomeDropzone</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">paramName</span><span class="p">:</span> <span class="s2">"file"</span><span class="p">,</span> <span class="c1">// The name that will be used to transfer the file</span>
-  <span class="na">maxFilesize</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="c1">// MB</span>
-  <span class="na">accept</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">file</span><span class="p">,</span> <span class="nx">done</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="nx">file</span><span class="p">.</span><span class="nx">name</span> <span class="o">==</span> <span class="s2">"justinbieber.jpg"</span><span class="p">)</span> <span class="p">{</span>
-      <span class="nx">done</span><span class="p">(</span><span class="s2">"Naha, you don't."</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="k">else</span> <span class="p">{</span> <span class="nx">done</span><span class="p">();</span> <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">};</span></code></pre></figure>
-
-  <p>If you want to disable the auto discover behaviour of Dropzone, you can either disable
-it on a per element basis, or in general:</p>
-
-  <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="c1">// Prevent Dropzone from auto discovering this element:</span>
-<span class="nx">Dropzone</span><span class="p">.</span><span class="nx">options</span><span class="p">.</span><span class="nx">myAwesomeDropzone</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
-<span class="c1">// This is useful when you want to create the</span>
-<span class="c1">// Dropzone programmatically later</span>
-
-<span class="c1">// Disable auto discover for all elements:</span>
-<span class="nx">Dropzone</span><span class="p">.</span><span class="nx">autoDiscover</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span></code></pre></figure>
-
-  <h2 class="anchor" id="configuration-options">Configuration options</h2>
+  <h2 class="anchor" id="configuration-options">Agreement Highlights</h2>
   <table>
   <thead>
 
-    <tr><th class="title" colspan="2"><div class="header">Configuration options</div></th></tr>
+    <tr><th class="title" colspan="2"><div class="header">Contract Highlights</div></th></tr>
     <tr><th>Option</th><th>Description</th></tr>
 
   </thead>
   <tbody>
     <tr id="config-url">
-      <td><a href="http://www.dropzonejs.com/#config-url"><code>url</code></a></td>
+      <td><a href="http://www.dropzonejs.com/#config-url"><code>Obligations</code></a></td>
       <td>
-        Has to be specified on elements other than form (or when the form
-        doesn't have an <code>action</code> attribute). You can also
-        provide a function that will be called with <code>files</code> and
-        must return the url (since <code>v3.12.0</code>)
+        Specifies very stringent obligations, even under the conditions of receiving a <code>subpoena</code>.
       </td>
 
     </tr><tr id="config-method">
 
-      <td><a href="http://www.dropzonejs.com/#config-method"><code>method</code></a></td>
+      <td><a href="http://www.dropzonejs.com/#config-method"><code>Amendements</code></a></td>
       <td>
-        Defaults to <code>"post"</code> and can be changed to
-        <code>"put"</code> if necessary. You can also provide a function
-        that will be called with <code>files</code> and must return the
-        method (since <code>v3.12.0</code>)
+        Allows the opposing party to <code>amend this contract at will</code>.
        </td>
-
+    <!--
     </tr><tr id="config-parallelUploads">
 
       <td><a href="http://www.dropzonejs.com/#config-parallelUploads"><code>parallelUploads</code></a></td>
@@ -745,9 +716,11 @@ it on a per element basis, or in general:</p>
         If <code>maxFiles</code> is set, this will be the error message when it's exceeded.
       </td>
     </tr>
+    -->
   </tbody>
 </table>
 
+<!--
   <blockquote>
     <p>You can also overwrite all default event actions in the options. So if you provide the option <code class="highlighter-rouge">drop</code> you can overwrite the default <code class="highlighter-rouge">drop</code> event handler.
 <em>You should be familiar with the code if you do that because you can easily break the upload like this.</em>
@@ -1391,6 +1364,7 @@ button, <a href="http://tiptheweb.org/">tiptheweb</a> or my
 </div>
 
 </section>
+-->
 
 
 
