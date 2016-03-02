@@ -1,0 +1,259 @@
+{% extends "base.html" %}
+
+{% block head_extra %}
+<title>DataMAC Dashboard</title>
+<style>
+    .legend {
+        height: 50px;
+        background: rgba(230, 230, 230, 0.5)
+    }
+    
+    .legend span {
+        display: inline-block;
+        padding: 15px 30px;
+        position: relative;
+    }
+    
+    .legend span:after {
+        padding-left: 4px;
+        content: '\00a0\00a0\00a0\00a0\00a0\00a0';
+        text-decoration: line-through;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Dashboard</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-users fa-5x"></i>
+                    </div>
+                    <div id="nearby-devices"></div>
+                </div>
+            </div>
+            <a href="/details">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-green">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-anchor fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">12</div>
+                        <div>Returning Patrons</div>
+                        <!-- show pie chart with other -->
+                    </div>
+                </div>
+            </div>
+            <a href="/details">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-yellow">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-shopping-cart fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">6</div>
+                        <div>Nearby Promos</div>
+                    </div>
+                </div>
+            </div>
+            <a href="/promos">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6">
+        <div class="panel panel-red">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-comments fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">5</div>
+                        <div>Suggestions</div>
+                    </div>
+                </div>
+            </div>
+            <a href="#suggestions">
+                <div class="panel-footer">
+                    <span class="pull-left">View Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i> Projection (expected customer traffic)
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div id="morris-area-chart"></div>
+                <div id="legend" class="legend"></div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i> History
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div class="row">
+                    <!-- /.col-lg-4 (nested) -->
+                    <div class="col-lg-12">
+                        <div id="morris-bar-chart"></div>
+                        <div id="barLegend" class="legend"></div>
+                    </div>
+                    <!-- /.col-lg-8 (nested) -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+    <!-- /.col-lg-8 -->
+    <div class="col-lg-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i> Employee Allocation Forecast
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div id="emp-scheduling"></div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i> Live Purchase Breakdown
+            </div>
+            <div class="panel-body">
+                <div id="morris-donut-chart"></div>
+                <a href="/sales" class="btn btn-default btn-block">View Details</a>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+    <!-- /.panel .chat-panel -->
+</div>
+<!-- /.col-lg-4 -->
+<div class="panel panel-default">
+    <a name="suggestions"></a>
+    <div class="panel-heading">
+        <i class="fa fa-clock-o fa-fw"></i> Suggestions
+    </div>
+    <!-- /.panel-heading -->
+    <div class="panel-body">
+        <ul class="timeline">
+            <li>
+                <div class="timeline-badge"><i class="fa fa-th"></i>
+                </div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4 class="timeline-title">Arrangements</h4>
+                        <!-- <p><small class="text-muted"><i class="fa fa-clock-o"></i> 11 hours ago via Twitter</small>
+                                            </p> -->
+                    </div>
+                    <div class="timeline-body">
+                        <p>Increase seating by using a new arangement.</p>
+                    </div>
+                </div>
+            </li>
+            <li class="timeline-inverted">
+                <div class="timeline-badge warning"><i class="fa fa-clock-o"></i>
+                </div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4 class="timeline-title">Operating Hours</h4>
+                    </div>
+                    <div class="timeline-body">
+                        <p>Increase revenue by opening one hour later than you currently do.</p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="timeline-badge danger"><i class="fa fa-calendar"></i>
+                </div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4 class="timeline-title">Adjust Employee Staffing</h4>
+                    </div>
+                    <div class="timeline-body">
+                        <p>Staffing can be lowered for periods of lower activity.</p>
+                    </div>
+                </div>
+            </li>
+
+            <li class="timeline-inverted">
+                <div class="timeline-badge info"><i class="fa fa-bell"></i>
+                </div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4 class="timeline-title">Ads</h4>
+                    </div>
+                    <div class="timeline-body">
+                        <p>Increase customer traffic with targeted Groupon promotions.</p>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="timeline-badge success"><i class="fa fa-book"></i>
+                </div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4 class="timeline-title">Popular Dishes</h4>
+                    </div>
+                    <div class="timeline-body">
+                        <p>Include suggested popular dishes on restaurant menus.</p>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+    <!-- /.panel-body -->
+</div>
+<!-- /.row -->
+{% endblock %}
