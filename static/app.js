@@ -368,7 +368,16 @@ function init() {
       this.on("complete", function(file) {
           console.log(file);
           // location.href = '/upload';
-          location.href = '#configuration';
+          var loading_screen = pleaseWait({
+            logo: "/static/dCoder_small.png",
+            backgroundColor: '#E8E9EC',
+            loadingHtml: "Reading your document..."
+          });
+          setTimeout(function() {
+            loading_screen.finish();
+            location.href = '#configuration';
+          }, 3500);
+          
       });
     }    
 
