@@ -7,10 +7,10 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route('/post.html')
-@app.route('/post')
+@app.route('/upload.html')
+@app.route('/upload')
 def post():
-    return render_template('post.html')
+    return render_template('upload.html')
 
 @app.errorhandler(404)
 def page_not_found(error):

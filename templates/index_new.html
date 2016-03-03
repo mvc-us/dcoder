@@ -1,9 +1,5 @@
 {% extends "base.html" %} {% block main %}
-<script type="text/javascript">
-$(function() {
-  $("div#myId").dropzone({ url: "/file/post" });
-});
-</script>
+<script src="static/js/uploadHandler.js"></script>
 <nav class="">
     <a class="logo" href="https://www.dropzonejs.com/#"><img src="static/new-logo-icon.svg" alt="Logo"></a>
     <div class="level-0"><a href="#" class="">Installation</a>
@@ -45,14 +41,13 @@ $(function() {
 <section>
     <h1 id="try-it-out">Upload Document</h1>
     <div id="dropzone">
-        <form action="/upload" class="dropzone needsclick dz-clickable" id="demo-upload" onsubmit="window.location.href = '/upload'">
+        <form action="/upload" class="dropzone needsclick dz-clickable" id="contract-upload">
             <div class="dz-message needsclick">
                 Drop files here or click to upload.
                 <br>
                 <span class="note needsclick">(Select a <strong>pdf</strong>, <strong>txt</strong>, or <strong>doc</strong>)</span>
             </div>
         </form>
-
     </div>
 </section>
 <section>

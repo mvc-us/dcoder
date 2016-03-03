@@ -363,7 +363,13 @@ function init() {
         }
         setTimeout(function() { file.previewElement.classList.add("dz-image-preview"); }, 1);
       }
-    }
+    }, 
+    init: function() {
+      this.on("complete", function(file) {
+          console.log(file);
+          location.href = '/upload';
+      });
+    }    
 
   });
 
