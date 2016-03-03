@@ -1,2 +1,14 @@
 {% extends "base.html" %}
-{% include "nda.html" %}
+{% block main %}
+<nav class="">
+    <a class="logo" href="https://www.dropzonejs.com/#"><img src="static/new-logo-icon.svg" alt="Logo"></a>
+    <div class="level-0"><a href="/" class="">dCoder Home</a>
+        <div class="sub-sections" style="height: 0px;">
+            <div class="level-1"><a href="#" class="">Android</a></div>
+            <div class="level-1"><a href="#" class="">iOS</a></div>
+        </div>
+    </div>
+</nav>
+	{% include "nda.html" %}
+	{% include "nda_table.html" %}
+{% endblock %}

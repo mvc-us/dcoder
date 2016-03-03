@@ -367,7 +367,8 @@ function init() {
     init: function() {
       this.on("complete", function(file) {
           console.log(file);
-          location.href = '/upload';
+          // location.href = '/upload';
+          location.href = '#configuration';
       });
     }    
 

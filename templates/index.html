@@ -1,4 +1,38 @@
-{% extends "base.html" %} {% block main %}
+{% extends "base.html" %} 
+
+{% block splash_page %}
+  <header style="transform: translateY(0px); opacity: 1;">
+
+    <div class="content">
+      <h1>
+        <img itemprop="image" src="static/dCoder.png" alt="Logo">
+        <span itemprop="name">dropzone.js</span>
+      </h1>
+
+
+      <h2 itemprop="description">dCoder simplifies reading contracts and patents to save you time and money.</h2>
+      <h2 itemprop="description">dCoder makes reading legal contracts easier!</h2>
+
+      <p class="scroll-invitation">
+        <a href="https://www.dropzonejs.com/#try-it-out"><span>Scroll down!</span></a>
+      </p>
+    </div>
+          <script type="text/javascript">
+            (function() {
+              var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+              po.src = 'https://apis.google.com/js/plusone.js';
+              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+          </script>
+        </div>
+
+      </section>
+
+
+  </header>
+{% endblock %}
+
+{% block main %}
 <script type="text/javascript">
 $(function() {
   $("div#myId").dropzone({ url: "/file/post" });
