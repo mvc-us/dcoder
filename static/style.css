@@ -267,7 +267,7 @@ body > header .content h1 span { display: none; }
 body > header #social-buttons .social-button { display: inline-block; }
 body > header #social-buttons .social-button.facebook-social-button .fb-like > span { vertical-align: top !important; top: 1px; }
 body > header .scroll-invitation { margin-top: 2.8rem; margin-bottom: 2.8rem; }
-body > header .scroll-invitation a { display: block; width: 56px; height: 56px; background: url("../images/arrow.svg") no-repeat; }
+body > header .scroll-invitation a { display: block; width: 56px; height: 56px; background: url("../static/img/arrow.svg") no-repeat; }
 body > header .scroll-invitation a:hover { text-decoration: none; border: none; background-image: url("../images/arrow-hover.svg"); }
 body > header .scroll-invitation a span { display: none; }
 @media (min-width: 700px) { body > header { height: 100vh; margin-bottom: 0; }
