@@ -5,7 +5,7 @@
 var lastRect;
 var lastRange;
 
-var transparent = 0.3;
+var transparent = 0.12;
 
 function replaceSelectionWithHtml(html) {
     lastRange.deleteContents();
@@ -36,15 +36,42 @@ $(document).on({
   },
 });
 
+function resetTextarea() {
+  $("#textarea-popup").hide();
+  $("#comment-textarea").val("");
+}
+
 $(document).keyup(function(e) {
      if (e.keyCode == 27) { // escape key maps to keycode `27`
-        $("#textarea-popup").hide();
+        resetTextarea();
     }
 });
+
+function escapeQuotes(s) {
+  return s.replace(/'/g, "&apos;").replace(/"/g, "&quot;");
+}
 
 function startTyping() {
     $('#textarea-popup').css('opacity', 1.0);
 }
+
+function showUserText(item) {
+  var rect = item.getBoundingClientRect();
+  var text = item.title;
+  console.log(text);
+  $('feedback-text').val(text);
+  // $('#feedback-popup')
+  //         // .text('hovered')
+  //         .css({
+  //           top: document.body.scrollTop + rect.top - window.innerHeight - $('#feedback-popup').outerHeight(),
+  //           left: rect.left,
+  //           opacity: transparent
+  //         })
+  //         .show();
+}
+
+var insertHTMLStart = '<a href="https://www.upcounsel.com/pricing" data-toggle="tooltip" onmouseover="showUserText(this);" title="';
+var insertHTMLMiddle = '"><code class="user-highlight">';
 
 function onBoxKey() {
     var key = window.event.keyCode;
@@ -52,11 +79,11 @@ function onBoxKey() {
     if (key == 13) {
         // document.getElementById("txtArea").value =document.getElementById("txtArea").value + "\n*";
         // return false;
-        var text = $('#comment-textarea').value;
+        var text = $('#comment-textarea').val();
         console.log(text);
-        $("#textarea-popup").hide();
         var origString = lastRange.toString();
-        replaceSelectionWithHtml('<code class="highlighter-rouge">' + origString + '</code>');
+        resetTextarea();
+        replaceSelectionWithHtml(insertHTMLStart + escapeQuotes(text) + insertHTMLMiddle + origString + '</code>');
     }
 }
 

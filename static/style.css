@@ -20,6 +20,15 @@ table { border-collapse: collapse; border-spacing: 0; }
   margin: 100px auto;
 }
 
+#feedback-popup {
+  position: absolute;
+  color: white;
+  background: #666;
+  padding: 0.5em;
+  display: none;
+  opacity: 0.4;
+}
+
 #textarea-popup {
   position: absolute;
   color: white;
@@ -314,6 +323,10 @@ em { font-style: italic; }
 /*code { font-family: Inconsolata, monospace; background: rgba(0, 135, 247, 0.04); padding: 0.2em 0.4em; }*/
 
 code { font-family: Inconsolata, monospace; background: yellow; padding: 0.2em 0.4em; }
+
+.user-highlight {
+  background: #ADD8E6;
+}
 
 .highlight code, td:first-child code { background: none; padding: 0; }
 
