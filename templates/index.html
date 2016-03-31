@@ -1,5 +1,9 @@
 {% extends "base.html" %} 
 
+{% block head_extra %}
+<script src="static/highlight.js"></script>
+{% endblock %}
+
 {% block splash_page %}
   <header style="transform: translateY(0px); opacity: 1;">
 
@@ -97,5 +101,9 @@ $(function() {
     <h2 class="anchor" id="configuration-options">Agreement Highlights</h2>
     {% include "nda_table.html" %}
     {% include "nda.html" %}
-    
+
+    <div id="textarea-popup">
+      <textarea id="comment-textarea" rows="4" cols="50" placeholder="Your comments about highlighted text..." oninput="startTyping();" onkeypress="onBoxKey();" onmouseover="makePopupVisible();" onmouseout="makePopupTrans();">      
+      </textarea>
+    </div>
     {% endblock %}

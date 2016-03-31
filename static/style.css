@@ -20,6 +20,20 @@ table { border-collapse: collapse; border-spacing: 0; }
   margin: 100px auto;
 }
 
+#textarea-popup {
+  position: absolute;
+  color: white;
+  background: #666;
+  padding: 0.5em;
+  display: none;
+  opacity: 0.4;
+}
+
+#comment-textarea {
+  background: #666;
+  padding: 0.5em;
+}
+
 .sk-cube-grid .sk-cube {
   width: 33%;
   height: 33%;
