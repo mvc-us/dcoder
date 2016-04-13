@@ -177,7 +177,6 @@ function init() {
 
 
   var fixed = false;
-  window.addEventListener('scroll', buffer(handleScroll));
   window.addEventListener('scroll', function() {
 
     if (disableScrollEvents) return true;
@@ -210,46 +209,6 @@ function init() {
 
 
   var disableScrollEvents = false;
-
-  function handleScroll() {
-    if (disableScrollEvents) return true;
-    updateSectionPositions();
-    highlightCurrentSection();
-  }
-
-  function highlightCurrentSection() {
-    var scrollTop = window.pageYOffset,
-        scrollBottom = scrollTop + windowHeight,
-        scrollMiddle = scrollTop + windowHeight / 3;
-
-    var highlightedSection = allSections[0];
-
-    if (highlightedSection.top > scrollMiddle) {
-      // The page is scrolled to the top, so the first section is not visible
-      for (var i = 0; i < allSections.length; i++) {
-        allSections[i].downlight();
-      }
-      
-    }
-    else {
-      for (var i = 0; i < allSections.length; i++) {
-        var section = allSections[i];
-        if (section.top < scrollMiddle) {
-          highlightedSection = section;
-        }
-        else {
-          break;
-        }
-      }
-
-      highlightedSection.highlight();
-    }
-
-  }
-
-
-
-
 
   // Smoothscroll
 
@@ -326,19 +285,6 @@ function init() {
     setTimeout(scroll_frame, 0);
   }
 
-  document.querySelector('.scroll-invitation a').addEventListener('click', function(e) {
-    e.preventDefault();
-    smoothScrollToStart();
-  });
-
-
-
-
-
-
-
-
-
 
 
 
@@ -346,7 +292,7 @@ function init() {
 
 
   var dropzone = new Dropzone('#demo-upload', {
-    previewTemplate: document.querySelector('#preview-template').innerHTML,
+    // previewTemplate: document.querySelector('#preview-template').innerHTML,
     parallelUploads: 2,
     thumbnailHeight: 120,
     thumbnailWidth: 120,
@@ -375,7 +321,7 @@ function init() {
           });
           setTimeout(function() {
             loading_screen.finish();
-            location.href = '#configuration';
+            location.href = '/contract';
           }, 3500);
           
       });

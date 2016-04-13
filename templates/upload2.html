@@ -1,0 +1,34 @@
+{% extends "base2.html" %}
+{% block head_extra %}
+<link rel="stylesheet" href="static/dropzone.css">
+<!-- <script src="/static/js/dropzone2.js"></script> -->
+<script src="static/dropzone.js"></script>
+<link href="static/please-wait.css" rel="stylesheet">
+<script type="text/javascript" src="/static/js/please-wait.min.js"></script>
+<script src="static/js/app2.js"></script>
+<script>
+Dropzone.autoDiscover = false;
+</script>
+{% endblock %}
+
+{% block main %}
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+    	<div class="panel panel-info">
+	      <div class="panel-heading">Upload Document</div>
+	      <div class="panel-body">
+	      	<div id="dropzone">
+	        <form action="/upload" class="dropzone needsclick dz-clickable" id="demo-upload" onsubmit="window.location.href = '/upload'">
+	            <div class="dz-message needsclick">
+	                Drop files here or click to upload.
+	                <br>
+	                <span class="note needsclick">(Select a <strong>pdf</strong>, <strong>txt</strong>, or <strong>doc</strong>)</span>
+	            </div>
+	        </form>
+
+    		</div>
+	      </div>
+	    </div>
+    </div>
+</div>
+{% endblock %}

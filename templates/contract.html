@@ -1,0 +1,92 @@
+{% extends "base2.html" %}
+{% block title %}
+<title>dCoder: Contract Feedback</title>
+{% endblock %}
+
+{% block main %}
+	<!-- What is -->
+	<div id="whatis" class="content-section-b" style="border-top: 0">
+		<div class="container">
+
+			<div class="col-md-6 col-md-offset-3 text-center wrap_title">
+				<h2>Contract Overview</h2>
+				<p class="lead" style="margin-top:0">A quick summary of key contract elements.</p>
+				
+			</div>
+			
+			<div class="row">
+			
+				<div class="col-sm-4 wow fadeInDown text-center">
+				  <img class="rotate" src="/static/img/icon/bank.svg" alt="Generic placeholder image">
+				  <h3>Financial Ramifications</h3>
+				  <p class="lead">This contract does not limit the financial liabilities as a result of breach of contract.</p>
+				</div><!-- /.col-lg-4 -->
+				
+				<div class="col-sm-4 wow fadeInDown text-center">
+				  <img  class="rotate" src="/static/img/icon/clocks.svg" alt="Generic placeholder image">
+				   <h3>Timeline</h3>
+				   <p class="lead">This contract does not limit the extent of time that confidentiality must be maintained.</p>
+				</div><!-- /.col-lg-4 -->
+				
+				<div class="col-sm-4 wow fadeInDown text-center">
+				  <img  class="rotate" src="/static/img/icon/retina.svg" alt="Generic placeholder image">
+				   <h3>Definitions</h3>
+					<p class="lead">This contract abides by your standard definitions of confidential information. </p>
+				  <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
+				</div><!-- /.col-lg-4 -->
+				
+			</div><!-- /.row -->
+				
+			<div class="row tworow">
+			
+				<div class="col-sm-4  wow fadeInDown text-center">
+				  <img class="rotate" src="/static/img/icon/pencil.svg" alt="Generic placeholder image">
+				  <h3>Negotiate</h3>
+				  <p class="lead">You may want to negotiate the clause about extent of confidentiality.</p>
+				 <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
+				</div><!-- /.col-lg-4 -->
+				
+				<div class="col-sm-4 wow fadeInDown text-center">
+				  <img  class="rotate" src="/static/img/icon/folder.svg" alt="Generic placeholder image">
+				   <h3>Your Profile</h3>
+				   <p class="lead">Based on the data in your profile, you would accept all except for clauses 3 and 7.</p>
+				   <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
+				</div><!-- /.col-lg-4 -->
+				
+				<div class="col-sm-4 wow fadeInDown text-center">
+				  <img  class="rotate" src="/static/img/icon/bell.svg" alt="Generic placeholder image">
+				   <h3>Due Date</h3>
+				 <p class="lead">This contract must be signed within 30 days. </p>
+				  <!-- <p><a class="btn btn-embossed btn-primary view" role="button">View Details</a></p> -->
+				</div><!-- /.col-lg-4 -->
+				
+			</div><!-- /.row -->
+		</div>
+	</div>
+	
+	<!-- Use it -->
+    <div id ="useit" class="content-section-a">
+
+        <div class="container">
+            <div class="row">				
+                <div class="col-sm-8 wow fadeInLeftBig"  data-animation-delay="200">
+                    <h3 class="section-heading">Nondisclosure Agreement</h3>
+					<div class="sub-title lead3">NDA between John Doe and UC Berkeley</div>
+				</div>   
+            </div>
+
+            {% include "nda_new.html" %}
+
+            <div class="row">				
+                <div class="col-sm-8 wow fadeInLeftBig"  data-animation-delay="200">
+					 <p><a class="btn btn-embossed btn-primary" href="#" role="button">View Details</a> 
+					 <a class="btn btn-embossed btn-info" href="#" role="button">Contact Expert</a></p>
+				</div>   
+            </div>
+        </div>
+        <!-- /.container -->
+    </div>
+
+	
+{% endblock %}
+
