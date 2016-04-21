@@ -48,13 +48,13 @@
 
 	UIMorphingButton.prototype._init = function() {
 		// save element height
-		this.elH = this.el.offsetHeight;
+		// this.elH = this.el.offsetHeight;
 		// the button
-		this.button = this.el.querySelector( 'button' );
+		// this.button = this.el.querySelector( 'button' );
 		// state
 		this.expanded = false;
 		// content el
-		this.contentEl = this.el.querySelector( '.morph-content' );
+		// this.contentEl = this.el.querySelector( '.morph-content' );
 		// init events
 		this._initEvents();
 	}

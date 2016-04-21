@@ -32,11 +32,14 @@
     <link href="/static/css/owl.theme.css" rel="stylesheet">
 	<link href="/static/css/style.css" rel="stylesheet">
 	<link href="/static/css/animate.css" rel="stylesheet">
+
+	<script src="/static/js/jquery-1.10.2.js"></script>
 	
 	<!-- Magnific Popup core CSS file -->
 	<link rel="stylesheet" href="/static/css/magnific-popup.css"> 
 	
 	<script src="/static/js/modernizr-2.8.3.min.js"></script>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" media="screen">  
 
 	{% block head_extra %}
 	{% endblock %}
@@ -70,16 +73,21 @@
 
 			<div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
 				<ul class="nav navbar-nav">
-					
 					<li class="menuItem"><a href="/upload">Upload</a></li>
-					<li class="menuItem"><a href="/contract">Database</a></li>
+					<li class="menuItem"><a href="/profile">Database</a></li>
+					{% block nav_item_extra %}
 					<li class="menuItem"><a href="#credits">Subscriptions</a></li>
 					<li class="menuItem"><a href="#contact">About</a></li>
 					<li class="menuItem"><a href="#screen">Careers</a></li>
+					{% endblock %}
 				</ul>
+				{% block nav_right_extra %}
+				{% endblock %}
 			</div>
 		   
 		</div>
+		{% block nav_extra %}
+		{% endblock %}
 	</nav> 
 
 	{% block main %}
@@ -87,7 +95,6 @@
 	{% endblock %}
 
     <!-- JavaScript -->
-    <script src="/static/js/jquery-1.10.2.js"></script>
     <script src="/static/js/bootstrap.js"></script>
 	<script src="/static/js/owl.carousel.js"></script>
 	<script src="/static/js/script.js"></script>
@@ -96,6 +103,7 @@
 	<script type="text/javascript">
 	  jQuery(function($) {
 		$(document).ready( function() {
+			console.log("Done");
 		  $('.navbar-default').stickUp();
 		  
 		});
@@ -112,6 +120,8 @@
 	<script src="/static/js/uiMorphingButton_inflow.js"></script>
 	<!-- Magnific Popup core JS file -->
 	<script src="/static/js/jquery.magnific-popup.js"></script> 
+	{% block script_extra %}
+	{% endblock %}
 </body>
 
 </html>

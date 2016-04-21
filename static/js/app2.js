@@ -171,7 +171,6 @@ function init() {
   
   function handleResize() {
     windowHeight = getWindowHeight();
-    handleScroll();
     updateSectionPositions();
   }
 
