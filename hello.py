@@ -52,7 +52,7 @@ class TableElement:
         start_date = random_date(TableElement.earliest_date, TableElement.latest_date)
         self.issue_date = start_date.strftime('%m/%d/%Y')  
         end_date = random_date(start_date, TableElement.latest_date)
-        self.due_date = end_date.strftime('%m/%d/%Y') 
+        self.due_date = end_date.strftime('%m/%d/%Y')
         return self
 
 @app.route('/profile')
