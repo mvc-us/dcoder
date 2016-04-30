@@ -27,6 +27,7 @@ def random_date(start, end):
     return start + datetime.timedelta(
         seconds=random.randint(0, int((end - start).total_seconds())))
 
+
 class TableElement:
     """Use to populate table of contract info"""
     companies = ['Microsoft', 'Google', 'Slack', 'Uber', 'Aetna', 'Apple', 'Cloudflare', 'UC Berkeley', 'Pinn Construction']
@@ -69,6 +70,10 @@ def profile():
 @app.route('/upload')
 def upload():
     return render_template('upload2.html')
+
+@app.route('/chat_debug')
+def chat_debug():
+    return render_template('chat_debug.html')
 
 @app.errorhandler(404)
 def page_not_found(error):
