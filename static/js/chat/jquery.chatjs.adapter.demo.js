@@ -78,7 +78,7 @@ var DemoServerAdapter = (function () {
         myUser.RoomId = DemoAdapterConstants.DEFAULT_ROOM_ID;
         myUser.Name = "André Pena";
         myUser.Email = "andrerpena@gmail.com";
-        myUser.ProfilePictureUrl = "http://www.gravatar.com/avatar/574700aef74b21d386ba1250b77d20c6.jpg";
+        myUser.ProfilePictureUrl = "https://www.gravatar.com/avatar/574700aef74b21d386ba1250b77d20c6.jpg";
         myUser.Status = 1 /* Online */;
 
         // Echobot is the guy that will repeat everything you say
@@ -87,7 +87,7 @@ var DemoServerAdapter = (function () {
         echoBotUser.RoomId = DemoAdapterConstants.DEFAULT_ROOM_ID;
         echoBotUser.Name = "Assisstant";
         echoBotUser.Email = "echobot1984@gmail.com";
-        echoBotUser.ProfilePictureUrl = "http://www.gravatar.com/avatar/4ec6b20c5fed48b6b01e88161c0a3e20.jpg";
+        echoBotUser.ProfilePictureUrl = "https://www.gravatar.com/avatar/4ec6b20c5fed48b6b01e88161c0a3e20.jpg";
         echoBotUser.Status = 1 /* Online */;
 
         var lawyerUser = new ChatUserInfo();
@@ -95,7 +95,7 @@ var DemoServerAdapter = (function () {
         lawyerUser.RoomId = DemoAdapterConstants.DEFAULT_ROOM_ID;
         lawyerUser.Name = "Charlie";
         lawyerUser.Email = "echobot1984@gmail.com";
-        lawyerUser.ProfilePictureUrl = "http://placehold.it/50/55C1E7/fff?text=Charlie";
+        lawyerUser.ProfilePictureUrl = "https://placehold.it/50/55C1E7/fff?text=Charlie";
         lawyerUser.Status = 1 /* Online */;
 
         // adds the users in the global user list
